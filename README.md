@@ -1,5 +1,10 @@
 # Git and Git Commands
 
+## Going back one directory
+```zsh
+cd ..
+```
+
 ## Creating a Repository
 ```zsh
 cd Github
