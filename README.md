@@ -12,3 +12,15 @@
 - **Data Structures in different languages:** <p align="center"><img src="Images/data_languages.png" width="450"></p>
 ---
 ## Measuring Time Complexity
+- **Big O notation** - used to measure how running time or space requirements for your program grow as input size grows
+    - Used for all programming languages
+- Notation Rules:
+    1. Keep fastest growing term (time = a*n)
+    2. Drop constants (time = 0(n))
+- n refers to iterations
+    - number of computations
+- increasing size input -> time is almost constant
+    - time = a
+    - Keep fastest growing term
+    - Drop constants (a) -> time = **0(1)**
+        - Order of 1
