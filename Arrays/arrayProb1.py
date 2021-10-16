@@ -16,21 +16,29 @@ print()
 
 # 3. Find out if you spent exactly 2000 dollars in any month
 
+validMonths = []
 for k in range(0, 5):
-    findAmount = monthlyExpense[1][k]
-    if findAmount == 2000:
-        exactMonth = monthlyExpense[0][i]
-        found = True
-        break
-    else:
-        found = False
-if found == True:
-    print(exactMonth, "had exactly $2000!")
+    if monthlyExpense[1][k] == 2000:
+        validMonths.append(monthlyExpense[0][k])
+if len(validMonths) != 0:
+    for month in validMonths:
+        print(month, "had exactly $2000!")
 else:
     print("No month found with exactly $2000!")
 print()
 
 # 4. June month just finished and your expense is 1980 dollar. Add this item to our monthly expense list
-# 5. You returned an item that you bought in a month of April and
-# got a refund of 200$. Make a correction to your monthly expense list
-# based on this
+
+months = monthlyExpense[0]
+months.append("June")
+expenses = monthlyExpense[1]
+expenses.append(1980)
+print(monthlyExpense)
+print()
+
+# 5. You returned an item that you bought in a month of April and 
+# got a refund of 200$. Make a correction to your monthly expense list based on this
+
+monthlyExpense[1][3] = monthlyExpense[1][3] - 200
+print(monthlyExpense)
+print()
