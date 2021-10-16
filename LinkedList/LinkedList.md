@@ -22,6 +22,7 @@
 - Not only have link to next element by **previous** element <p align="center"><img src="doubleLinkList.png" width="450"></p>
 ### BigO Analysis: Array vs. Linked List
 - Comparison: <p align="center"><img src="arrayVsLink.png" width="350"></p>
-- 
+- Only advantage of array is accessing element through indexing
+- Amortized - if dynamic then have to copy for memory reallocation
 
 
