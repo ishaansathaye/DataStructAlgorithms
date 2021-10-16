@@ -36,7 +36,7 @@ if __name__ == '__main__':
     '''creating linked list object'''
     ll = LinkedList()
     '''inserts 5 and then 89b at the beginning'''
-    '''Debug program to see how inserting at beginning works'''
+    '''Debug program to see how inserting at beginning works (break at if statement)'''
     ll.insert_at_beginning(5)
     ll.insert_at_beginning(89)
     ll.print()
