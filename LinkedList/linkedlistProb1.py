@@ -92,6 +92,35 @@ class LinkedList:
                 break
             iteration = iteration.next
             count += 1
+    
+    #made function
+    def insert_after_value(self, data_after, data_to_insert):
+        #need to to check if empty too
+        if self.head == None:
+            return
+
+        iteration = self.head
+        while iteration:
+            if iteration.data == data_after:
+                node = Node(data_to_insert, iteration.next)
+                iteration.next = node
+                break
+            iteration = iteration.next
+    
+    #made function
+    def remove_by_value(self, data):
+        #need to check if empty too
+        if self.head == None:
+            return
+
+        iteration = self.head
+        count = 0
+        while iteration:
+            if iteration.data == data:
+                self.remove_at(count)
+                break
+            iteration = iteration.next
+            count += 1
 
     def print(self):
         if self.head is None:
@@ -107,7 +136,20 @@ class LinkedList:
 
 print()
 if __name__ == '__main__':
-    pass
+    ll = LinkedList()
+    ll.insert_values(["banana","mango","grapes","orange"])
+    ll.print()
+    ll.insert_after_value("mango","apple") # insert apple after mango
+    ll.print()
+    ll.remove_by_value("orange") # remove orange from linked list
+    ll.print()
+    ll.remove_by_value("figs")
+    ll.print()
+    ll.remove_by_value("banana")
+    ll.remove_by_value("mango")
+    ll.remove_by_value("apple")
+    ll.remove_by_value("grapes")
+    ll.print()
 
 print()
     
