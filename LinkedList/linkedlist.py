@@ -72,6 +72,29 @@ class LinkedList:
                 break
             iteration = iteration.next
             count += 1
+    
+    def insert_at(self, index, data):
+        '''check if given index is in bounds'''
+        if index < 0 or index >= self.get_length():
+            '''throwing an exception'''
+            raise Exception("Invalid index")
+        
+        if index == 0:
+            self.insert_at_beginning(data)
+            return
+        
+        count = 0
+        iteration = self.head
+        while iteration:
+            '''want to stop at the element before given index to modify link to that element'''
+            if count == (index-1):
+                '''create node for data and next would be the element you are inserting at, since right now at previous element'''
+                node = Node(data, iteration.next)
+                '''setting previous element's link to point to new element'''
+                iteration.next = node
+                break
+            iteration = iteration.next
+            count += 1
 
     def print(self):
         '''first element is blank in linked list'''
@@ -113,6 +136,11 @@ if __name__ == '__main__':
     ll2.remove_at(2)
     '''raises an exception because index out of bounds'''
     # ll2.remove_at(-2)
+    ll2.print()
+    '''insert elments at index and specifying element'''
+    ll2.insert_at(0, 'figs')
+    ll2.print()
+    ll2.insert_at(2, 'jackfruit')
     ll2.print()
 
 print()
