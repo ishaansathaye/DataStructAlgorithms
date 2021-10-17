@@ -93,7 +93,7 @@ class LinkedList:
             iteration = iteration.next
             count += 1
     
-    #made function
+    '''made function'''
     def insert_after_value(self, data_after, data_to_insert):
         #need to to check if empty too
         if self.head == None:
@@ -107,7 +107,7 @@ class LinkedList:
                 break
             iteration = iteration.next
     
-    #made function
+    '''made function'''
     def remove_by_value(self, data):
         #need to check if empty too
         if self.head == None:
