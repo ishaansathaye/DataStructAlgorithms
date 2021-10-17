@@ -50,6 +50,29 @@ class LinkedList:
             iteration = iteration.next
         return count
 
+    def remove_at(self, index):
+        '''check if given index is in bounds'''
+        if index < 0 or index >= self.get_length():
+            '''throwing an exception'''
+            raise Exception("Invalid index")
+        
+        '''if index is the head or the first'''
+        if index == 0:
+            self.head = self.head.next
+            return
+        
+        count = 0
+        iteration = self.head
+        '''iterating through the linked list'''
+        while iteration:
+            '''want to stop at the element before given index to remove link to that element'''
+            if count == (index-1):
+                '''make previous element link point to the element after the one that is being removed'''
+                iteration.next = iteration.next.next
+                break
+            iteration = iteration.next
+            count += 1
+
     def print(self):
         '''first element is blank in linked list'''
         if self.head is None:
@@ -66,6 +89,7 @@ class LinkedList:
             iterator = iterator.next
         print(llstr)
 
+print()
 if __name__ == '__main__':
     '''creating linked list object'''
     ll1 = LinkedList()
@@ -87,5 +111,9 @@ if __name__ == '__main__':
     print("length", ll2.get_length())
     '''removing element in linked list at specific index'''
     ll2.remove_at(2)
+    '''raises an exception because index out of bounds'''
+    # ll2.remove_at(-2)
     ll2.print()
+
+print()
     
