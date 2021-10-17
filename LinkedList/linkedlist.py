@@ -15,6 +15,24 @@ class LinkedList:
         node = Node(data, self.head)
         '''make the head element the one that was inserted'''
         self.head = node
+    
+    def insert_at_end(self, data):
+        '''check if calling if linked list is empty'''
+        if self.head is None:
+            '''head is the node created using the data'''
+            '''second argument is next (after last is None)'''
+            self.head = Node(data, None)
+            return
+        
+        '''linked list is not blank:'''
+        '''go to the end and insert there'''
+        iterator = self.head
+        while iterator.next:
+            '''if iterator.next has some value that means it is not the end'''
+            '''keep iterating'''
+            iterator = iterator.next
+        '''when iterator.next becomes none then insert new node'''
+        iterator.next = Node(data, None)
 
     def print(self):
         '''first element is blank in linked list'''
@@ -39,4 +57,6 @@ if __name__ == '__main__':
     '''Debug program to see how inserting at beginning works (break at if statement)'''
     ll.insert_at_beginning(5)
     ll.insert_at_beginning(89)
+    '''inserting 79 at the end of linked list'''
+    ll.insert_at_end(79)
     ll.print()
