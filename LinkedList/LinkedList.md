@@ -7,7 +7,7 @@
 ### Linked Lists
 - Values are at random memory locations, but are linked by pointers
 - First element has a reference to next element
-- Inserting elements means just modifying links: <p align="center"><img src="linkedMemoryLoc.png" width="450"></p>
+- Inserting elements means just modifying links: <p align="center"><img src="Images/linkedMemoryLoc.png" width="450"></p>
 - Just changing the link of references
 - BigO:
     - Insert element at beginning = O(1)
@@ -19,9 +19,9 @@
         - Linked List Traversal: O(n)
         - Accessing element by value = O(n)
 ### Double Linked List
-- Not only have link to next element by **previous** element <p align="center"><img src="doubleLinkList.png" width="450"></p>
+- Not only have link to next element by **previous** element <p align="center"><img src="Images/doubleLinkList.png" width="450"></p>
 ### BigO Analysis: Array vs. Linked List
-- Comparison: <p align="center"><img src="arrayVsLink.png" width="350"></p>
+- Comparison: <p align="center"><img src="Images/arrayVsLink.png" width="350"></p>
 - Only advantage of array is accessing element through indexing
 - Amortized - if dynamic then have to copy for memory reallocation
 

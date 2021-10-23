@@ -19,7 +19,7 @@
 - Example of Binary Search
     - Do not want to find number in a list using O(n)
     - If there are billion numbers then program has to do billion iterations 
-<p align="center"><img src="binarysearchexample.png" width="450"></p>
+<p align="center"><img src="Images/binarysearchexample.png" width="450"></p>
 
 - Binary Search (Search for 68 in a sorted list)
     - Find middle number in list and compare to 68 (less than so discard all items to the left)

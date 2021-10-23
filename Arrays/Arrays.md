@@ -2,7 +2,7 @@
 - RAM used to store data in arrays
     - memory locations have hexadecimal addresses
 - Numbers convert to binary to store in memory location
-- How integers stored in memory: <p align="center"><img src="memoryLocation.png" width="300"></p>
+- How integers stored in memory: <p align="center"><img src="Images/memoryLocation.png" width="300"></p>
 ---
 - **BigO Analysis: Lookup by Index**
 ```python
