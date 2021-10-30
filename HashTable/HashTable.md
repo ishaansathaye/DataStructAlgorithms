@@ -33,3 +33,7 @@
         - Same complexity of linked list
 - Good idea to store the key with the elements
 ### Approach #2: Linear Probing
+- Go the next available location if two keys collide for the same value
+    - If after last location not available -> go to 0th location and go down: <p align="center"><img src="Images/linearProbing.png" width="450"></p>
+- Linearly searching to store key-value pair in a slot
+
