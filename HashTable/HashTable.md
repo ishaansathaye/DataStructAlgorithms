@@ -21,6 +21,7 @@
 - Look up by key: O(1) on average
 - Insertion/Deletion: O(1) on average
 ---
+
 ## Collision Handling in Hash Table
 - Example of Collision
     - Two keys are are handling the values at the same location:<p align="center"><img src="Images/collisionImage.png" width="450"></p>
