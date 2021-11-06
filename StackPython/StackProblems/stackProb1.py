@@ -18,3 +18,17 @@ class Stack:
 
     def size(self):
         return len(self.container)
+
+def reverse_string(value):
+    s = Stack()
+    convertList = list(value)
+    for item in convertList:
+        s.push(item)
+    temp = ''
+    while s.size() != 0:
+        temp += s.pop()
+    return temp
+
+print()
+print(reverse_string("We will conquere COVID-19"))
+print()
