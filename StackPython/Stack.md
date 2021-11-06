@@ -17,5 +17,8 @@
     - Function Stack
 - Undo functionality (Cmd+Z) in any editor also uses stack to track down last set of operations
 ### Stack Implementation in Different Languages: <p align="center"><img src="Images/stackLang.png" width="500"></p>
-### Problems with using List as Stack
-- 
+### Problems with using [List as Stack](ListStack.ipynb)
+- Problem with list is that it is a dynamic array
+- Allocating memory capacity is a problem
+    - If list is full of 10 elements and want to add 11th element
+    - List will allocated additional capacity elsewhere and copy all the elements there
