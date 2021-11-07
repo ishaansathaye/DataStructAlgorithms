@@ -49,10 +49,10 @@ def is_balanced(input):
 
 if __name__ == '__main__':
     print()
-    print(is_balanced("({)"))
-    print(is_balanced("({a+b})"))
-    print(is_balanced("))((a+b}{"))
-    print(is_balanced("((a+b))"))
+    print(is_balanced("({)}")) #False
+    print(is_balanced("({a+b})")) #True
+    print(is_balanced("))((a+b}{")) #False
+    print(is_balanced("((a+b))")) #True
     print(is_balanced("((a+g))"))
     print(is_balanced("))"))
     print(is_balanced("[a+b]*(x+2y)*{gg+kk}"))
