@@ -10,8 +10,3 @@
 - First in First Out
     - Example: Person standing in line for movie tickets
 ### Stack Implementation in Different Languages: <p align="center"><img src="Images/diffQueueLang.png" width="500"></p>
-### Problems with using [List as Stack](ListStack.ipynb)
-- Problem with list is that it is a dynamic array
-- Allocating memory capacity is a problem
-    - If list is full of 10 elements and want to add 11th element
-    - List will allocated additional capacity elsewhere and copy all the elements there
