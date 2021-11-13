@@ -2,7 +2,7 @@
 ---
 ### Example: Stock Price Exchange Without Queue
 - Issue #1: What if HTTP server is down -> Loss of messages
-- Issue #2: 
+- Issue #2: Managing multiple consumers becomes problematic
 ### Operations in Stack (Last in First Out Data Structure)
 - Using Last in First Out (LIFO) method: <p align="center"><img src="Images/lifo.png" width="500"></p>
 - Keep **pushing** the elements into the data structure
