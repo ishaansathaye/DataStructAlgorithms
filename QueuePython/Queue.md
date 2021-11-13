@@ -9,7 +9,7 @@
 ### FIFO
 - First in First Out
     - Example: Person standing in line for movie tickets
-### Stack Implementation in Different Languages: <p align="center"><img src="Images/stackLang.png" width="500"></p>
+### Stack Implementation in Different Languages: <p align="center"><img src="Images/diffQueueLang.png" width="500"></p>
 ### Problems with using [List as Stack](ListStack.ipynb)
 - Problem with list is that it is a dynamic array
 - Allocating memory capacity is a problem
