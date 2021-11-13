@@ -10,3 +10,6 @@
 - First in First Out
     - Example: Person standing in line for movie tickets
 ### Stack Implementation in Different Languages: <p align="center"><img src="Images/diffQueueLang.png" width="500"></p>
+### Problems with using List as Queue
+- Allocating new memory for new elements that exceed the current capacity
+- Not recommended (can use ```deque``` in Python or implement queue using linked list)
