@@ -43,3 +43,4 @@
     - **log2(8) -> 3 iterations**
         - 8 elements
 ## [Examples of Time Complexities and their Algorithms](https://towardsdatascience.com/understanding-time-complexity-with-python-examples-2bda6e8158a7)
+## [Big O Cheat Sheet](https://bigocheatsheet.com)
