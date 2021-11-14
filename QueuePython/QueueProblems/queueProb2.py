@@ -22,16 +22,24 @@ class Queue:
         return len(self.buffer)
 
 orderFood = Queue()
-orderList = ['pizza','samosa','pasta','biryani','burger']
 
-def placeOrder():
-    pass
+def placeOrder(orders):
+    for order in orders:
+        print("Placing order for:", order)
+        orderFood.enqueue(order)
+        time.sleep(0.5)
 
 def serveOrder():
-    pass
+    time.sleep(1)
+    while orderFood.is_empty() == False:
+        order = orderFood.dequeue()
+        print("Now serving: "+ order)
+        time.sleep(2)
 
-t1 = threading.Thread(target=0, args=0)
-
-t1.start()
-
-t1.join()
+print()
+if __name__ == '__main__':
+    orderList = ['pizza','samosa','pasta','biryani','burger']
+    t1 = threading.Thread(target=placeOrder, args=(orderList,))
+    t2 = threading.Thread(target=serveOrder)
+    t1.start()
+    t2.start()
