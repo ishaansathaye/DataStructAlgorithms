@@ -13,3 +13,5 @@
 ### Problems with using List as Queue
 - Allocating new memory for new elements that exceed the current capacity
 - Not recommended (can use ```deque``` in Python or implement queue using linked list)
+### Big O Time Complexity
+- 
