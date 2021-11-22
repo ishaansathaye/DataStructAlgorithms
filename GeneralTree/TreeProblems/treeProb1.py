@@ -22,7 +22,7 @@ class TreeNode:
         elif option == 'designation':
             print(prefix + self.designation)
         elif option == 'both':
-            print(prefix + self.data + " " + self.designation)
+            print(prefix + self.data + " " + "("+self.designation+")")
         else:
             print('Not an option.')
         '''if children do exist'''
@@ -41,18 +41,18 @@ class TreeNode:
 
 
 def build_management_tree():
-        ceo = TreeNode("Nilupul", "(CEO)")
+        ceo = TreeNode("Nilupul", "CEO")
 
-        cto = TreeNode("Chinmay", "(CTO)")
-        infraHead = TreeNode("Vishwa", "(Infrastructure Head)")
+        cto = TreeNode("Chinmay", "CTO")
+        infraHead = TreeNode("Vishwa", "Infrastructure Head")
         cto.add_child(infraHead)
-        infraHead.add_child(TreeNode("Dhaval", "(Cloud Manager)"))
-        infraHead.add_child(TreeNode("Abhijit", "(App Manager)"))
-        cto.add_child(TreeNode("Aamir", "(Application Head)"))
+        infraHead.add_child(TreeNode("Dhaval", "Cloud Manager"))
+        infraHead.add_child(TreeNode("Abhijit", "App Manager"))
+        cto.add_child(TreeNode("Aamir", "Application Head"))
         
-        hrHead = TreeNode("Gels", "(HR Head)")
-        hrHead.add_child(TreeNode("Peter", "(Recruitment Manager)"))
-        hrHead.add_child(TreeNode("Waqas", "(Policy Manager)"))
+        hrHead = TreeNode("Gels", "HR Head")
+        hrHead.add_child(TreeNode("Peter", "Recruitment Manager"))
+        hrHead.add_child(TreeNode("Waqas", "Policy Manager"))
 
         ceo.add_child(cto)
         ceo.add_child(hrHead)
