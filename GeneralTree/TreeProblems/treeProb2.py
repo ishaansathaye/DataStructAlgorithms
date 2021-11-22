@@ -8,25 +8,24 @@ class TreeNode:
         self.parent = None
 
     def add_child(self, child):
-        '''Can also check for duplicate child elements here'''
         child.parent = self
         self.children.append(child)
 
     def print_tree(self, level):
         spaces = ' ' * self.get_level()*3
-        '''Checks if current node has a parent and then adds format'''
         prefix = spaces + "|__" if self.parent else ""
-        print(prefix + self.data)
         nodeLevel = self.get_level()
-        if nodeLevel < level:
-            if self.children:
-                for child in self.children:
-                    child.print_tree(level)
+        if nodeLevel <= level:
+            print(prefix + self.data)
+        # if self.data == "Palo Alto":
+        #     print(nodeLevel, level)
+        if self.children:
+            for child in self.children:
+                child.print_tree(level)
     
     def get_level(self):
         level = 0
         p = self.parent
-        '''if parent does exist'''
         while p:
             level += 1
             p = p.parent
@@ -55,7 +54,8 @@ def build_location_tree():
         usa.add_child(cali)
         cali.add_child(TreeNode("San Francisco"))
         cali.add_child(TreeNode("Mountain View"))
-        cali.add_child(TreeNode("Palo Alto"))
+        paloAlto = TreeNode("Palo Alto")
+        cali.add_child(paloAlto)
         
 
         globalTree.add_child(india)
@@ -65,4 +65,4 @@ def build_location_tree():
 
 if __name__ == "__main__":
     root_node = build_location_tree()
-    root_node.print_tree(1)
+    root_node.print_tree(2)
