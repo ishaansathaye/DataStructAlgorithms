@@ -17,10 +17,11 @@ class TreeNode:
         '''Checks if current node has a parent and then adds format'''
         prefix = spaces + "|__" if self.parent else ""
         print(prefix + self.data)
-        '''if children do exist'''
-        if self.children and self.get_level <= level:
-            for child in self.children:
-                child.print_tree(level)
+        nodeLevel = self.get_level()
+        if nodeLevel < level:
+            if self.children:
+                for child in self.children:
+                    child.print_tree(level)
     
     def get_level(self):
         level = 0
@@ -35,7 +36,7 @@ class TreeNode:
 def build_location_tree():
         globalTree = TreeNode("Global")
 
-        india = TreeNode("Chinmay")
+        india = TreeNode("India")
         gujurat = TreeNode("Gujurat")
         india.add_child(gujurat)
         gujurat.add_child(TreeNode("Ahmedabad"))
@@ -47,13 +48,14 @@ def build_location_tree():
         
         usa = TreeNode("USA")
         jersey = TreeNode("New Jersey")
-        india.add_child(gujurat)
-        gujurat.add_child(TreeNode("Ahmedabad"))
-        gujurat.add_child(TreeNode("Baroda"))
-        cali = TreeNode("Karnataka")
-        india.add_child(karnataka)
-        karnataka.add_child(TreeNode("Bangluru"))
-        karnataka.add_child(TreeNode("Mysore"))
+        usa.add_child(jersey)
+        jersey.add_child(TreeNode("Priceton"))
+        jersey.add_child(TreeNode("Trenton"))
+        cali = TreeNode("California")
+        usa.add_child(cali)
+        cali.add_child(TreeNode("San Francisco"))
+        cali.add_child(TreeNode("Mountain View"))
+        cali.add_child(TreeNode("Palo Alto"))
         
 
         globalTree.add_child(india)
