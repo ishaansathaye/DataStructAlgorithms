@@ -1,3 +1,5 @@
+#Write a function in python that can reverse a string using stack data structure.
+
 from collections import deque
 
 class Stack:
@@ -30,5 +32,5 @@ def reverse_string(value):
     return temp
 
 print()
-print(reverse_string("We will conquere COVID-19"))
+print(reverse_string("We will conquer COVID-19"))
 print()

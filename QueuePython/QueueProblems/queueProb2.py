@@ -1,4 +1,5 @@
 # https://github.com/codebasics/data-structures-algorithms-python/blob/master/data_structures/6_Queue/6_queue_exercise.md
+#Write a program to print binary numbers from 1 to 10 using Queue. Use Queue class implemented in main tutorial. 
 
 from collections import deque
 

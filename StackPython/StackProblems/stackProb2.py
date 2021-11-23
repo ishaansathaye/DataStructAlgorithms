@@ -1,3 +1,5 @@
+#Write a function in python that checks if paranthesis in the string are balanced or not. Possible parantheses are "{}',"()" or "[]".
+
 from collections import deque
 
 class Stack:
@@ -43,7 +45,7 @@ def is_balanced(input):
                 '''if does not match key then it becomes not False which is True -> returns False'''
                 '''if does match key then it becomes not True which is False -> moves on'''
                 return False
-    '''returns True if every element has been poppped or nothing has been added to stack'''
+    '''returns True if every element has been popped or nothing has been added to stack'''
     '''returns False if there are still elements in stack'''
     return s.size() == 0
 
