@@ -137,7 +137,7 @@ if __name__ == '__main__':
     '''raises an exception because index out of bounds'''
     # ll2.remove_at(-2)
     ll2.print()
-    '''insert elments at index and specifying element'''
+    '''insert elements at index and specifying element'''
     ll2.insert_at(0, 'figs')
     ll2.print()
     ll2.insert_at(2, 'jackfruit')
