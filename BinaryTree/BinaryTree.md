@@ -36,6 +36,15 @@
     - Complete Binary Tree 
         - -> all levels except possibly last level are filled
         - -> all nodes are as left as possible
+        - **Height of Complete Binary Tree**
+            - **floor(log2(n))**
+    - Perfect Binary Tree
+        - all levels are completely filled
+        - depth is the number of edges from root to leaf node
+        - **Maximum number of nodes in a binary tree with height *h***
+            - **n = 2^(h+1) - 1**
+        - **Number of nodes given a height *h***
+            - **h = log2(n+1) - 1**
 ### Search Types (Traversal Techniques)
 - **Breadth first search**
 - **Depth first search**
