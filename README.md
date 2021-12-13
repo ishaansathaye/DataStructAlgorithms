@@ -10,3 +10,22 @@
     - Dictionary uses Hash Map
         - There is a key that gives and address of a bucket, which gives access to an element
 - **Data Structures in different languages:** <p align="center"><img src="Images/data_languages.png" width="450"></p>
+## Data Structures and Algorithms Topics Covered:
+### - Time Complexity
+### - Arrays
+### - Linked List
+### - Hash Table
+### - Collision Handling in Hash Table
+### - Stack
+### - Queue
+### - Tree (General Tree)
+### - Binary Search Tree
+### - Graph
+### - Binary Search
+### - Bubble Sort
+### - Quick Sort
+### - Insertion Sort
+### - Merge Sort
+### - Shell Sort
+### - Selection Sort
+### - Recursion
