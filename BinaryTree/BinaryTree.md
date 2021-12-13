@@ -1,4 +1,4 @@
-## Binary Tree
+## Binary Tree  
 ---
 ### What is a Binary Tree?
 - A general tree, but **every node has at most 2 child nodes**
@@ -22,11 +22,20 @@
 - Evaluate element against each node
 - **Inserting Complexity: O(log n)**
 ### Terminology
-- Root Node
+- Root Node (First node at top)
+- Levels: <p align="center"><img src="Images/levels.png" width="500"></p>
+- Depth
+    - Maximum depth of tree = height of tree
+    - Number of edges (lines) from root to node -> depth of a node
+- **Maximum number of nodes at level i = 2^i**
 - Left Child and Right Child
     - Empty child means null
 - Leaf Node - node with no child nodes
-- 
+- Binary Tree -> only condition is that 1 node must have 2 children
+    - Strict/Proper Binary Tree -> each node can have either 0 or 2 children
+    - Complete Binary Tree 
+        - -> all levels except possibly last level are filled
+        - -> all nodes are as left as possible
 ### Search Types (Traversal Techniques)
 - **Breadth first search**
 - **Depth first search**
