@@ -81,6 +81,33 @@ class BinarySearchTreeNode:
 
         return sum
 
+    #post_order_traversal function assignment: left subtree, right subtree, base node
+    def post_order_traversal(self):
+        elements = []
+
+        if self.left:
+            elements += self.left.post_order_traversal() #use recursion to get to leftmost of left subtree
+        
+        if self.right:
+            elements += self.right.post_order_traversal() #use recursion to get to rightmost of right subtree
+        
+        elements.append(self.data)
+
+        return elements
+
+    #pre_order_traversal function assignment: base node, left subtree, right subtree
+    def pre_order_traversal(self):
+        elements = []
+
+        elements.append(self.data)
+
+        if self.left:
+            elements += self.left.pre_order_traversal() #use recursion to get to leftmost of left subtree
+        
+        if self.right:
+            elements += self.right.pre_order_traversal() #use recursion to get to rightmost of right subtree
+        
+        return elements
 
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
@@ -98,6 +125,19 @@ if __name__ == '__main__':
     print(numbers_tree.find_min())
     print(numbers_tree.find_max())
     print(numbers_tree.calculate_sum())
+    print(numbers_tree.post_order_traversal())
+    print(numbers_tree.pre_order_traversal())
+
+    print()
+
+    numbers = [15,12,7,14,27,20,23,88]
+    numbers_tree = build_tree(numbers)
+    print(numbers_tree.in_order_traversal())
+    print(numbers_tree.find_min())
+    print(numbers_tree.find_max())
+    print(numbers_tree.calculate_sum())
+    print(numbers_tree.post_order_traversal())
+    print(numbers_tree.pre_order_traversal())
 
     print()
 
@@ -107,3 +147,5 @@ if __name__ == '__main__':
     print(country_tree.search("China"))
     print(country_tree.find_min())
     print(country_tree.find_max())
+    print(country_tree.post_order_traversal())
+    print(country_tree.pre_order_traversal())
