@@ -1,4 +1,4 @@
-# Extent tree class built in our main tutorial so that it takes name and designation in data part of TreeNode class. 
+# Extend tree class built in our main tutorial so that it takes name and designation in data part of TreeNode class. 
 # Now extend print_tree function such that it can print either name tree, designation tree or name and designation tree.
 
 class TreeNode:
