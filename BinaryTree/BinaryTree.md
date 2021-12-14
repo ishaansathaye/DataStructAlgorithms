@@ -57,6 +57,9 @@
             - Go to left subtree -> Make current node the root node -> Go to left subtree
     - **Pre Order Traversal**
         - **Order of traversal: Root node subtree, left subtree, right subtree**
-        - Apply recursive techniqeu at each node
+        - Apply recursive technique at each node
+            - Go to left subtree -> Make current node the root node -> Go to left subtree
     - **Post Order Traversal**
         - **Order of traversal: Left subtree, right subtree, root node**
+        - Apply recursive technique at each node
+            - Go to left subtree -> Make current node the root node -> Go to left subtree
