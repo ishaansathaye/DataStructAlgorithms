@@ -53,6 +53,12 @@ class BinarySearchTreeNode:
                 return self.right.search(value)
             else:
                 return False
+        
+    def find_min(self):
+        if self.left:
+            return self.left.find_min()
+        else:
+            return self.data
 
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
@@ -68,3 +74,5 @@ if __name__ == '__main__':
     print(numbers_tree.in_order_traversal())
     print()
     print(numbers_tree.search(20))
+    print()
+    print(numbers_tree.find_min())
