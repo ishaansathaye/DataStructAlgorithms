@@ -53,12 +53,34 @@ class BinarySearchTreeNode:
                 return self.right.search(value)
             else:
                 return False
-        
+    
+    #find_min function assignment
     def find_min(self):
         if self.left:
-            return self.left.find_min()
+            return self.left.find_min() #use recursion to find leftmost node of right subtress
         else:
             return self.data
+    
+    #find_max function assignment
+    def find_max(self):
+        if self.right:
+            return self.right.find_max() #use recursion to find rightmost node of right subtrees
+        else:
+            return self.data
+    
+    #calculate_sum function assignment
+    def calculate_sum(self):
+        sum = 0
+        if self.left:
+            sum += self.left.calculate_sum()
+        
+        sum += self.data
+
+        if self.right:
+            sum += self.right.calculate_sum()
+
+        return sum
+
 
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
@@ -74,10 +96,14 @@ if __name__ == '__main__':
     print(numbers_tree.in_order_traversal())
     print(numbers_tree.search(20))
     print(numbers_tree.find_min())
+    print(numbers_tree.find_max())
+    print(numbers_tree.calculate_sum())
 
     print()
 
     countries = ["India","Pakistan","Germany", "USA","China","India","UK","USA"]
     country_tree = build_tree(countries)
     print(country_tree.in_order_traversal())
+    print(country_tree.search("China"))
     print(country_tree.find_min())
+    print(country_tree.find_max())
