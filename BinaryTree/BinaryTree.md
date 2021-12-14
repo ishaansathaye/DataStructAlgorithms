@@ -46,8 +46,17 @@
         - **Number of nodes given a height *h***
             - **h = log2(n+1) - 1**
 ### Search Types (Traversal Techniques)
+<p align="center"><img src="Images/traversal.png" width="500"></p>
+
 - **Breadth first search**
 - **Depth first search**
     - **In Order Traversal**
+        - Need the Root Node *in order*
+        - **Order of traversal: Left subtree, root node, right subtree**
+        - Apply recursive technique at each node
+            - Go to left subtree -> Make current node the root node -> Go to left subtree
     - **Pre Order Traversal**
+        - **Order of traversal: Root node subtree, left subtree, right subtree**
+        - Apply recursive techniqeu at each node
     - **Post Order Traversal**
+        - **Order of traversal: Left subtree, right subtree, root node**
