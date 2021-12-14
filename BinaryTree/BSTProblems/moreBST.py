@@ -1,4 +1,8 @@
-#Binary Search Tree: values are in order with less than root node being left subtree and greater than root node being right subtree
+# 1. find_min(): finds minimum element in entire binary tree
+# 2. find_max(): finds maximum element in entire binary tree
+# 3. calculate_sum(): calculates sum of all elements
+# 4. post_order_traversal(): performs post order traversal of a binary tree
+# 5. pre_order_traversal(): performs pre order traversal of a binary tree
 class BinarySearchTreeNode:
     def __init__(self, data):
         self.data = data
