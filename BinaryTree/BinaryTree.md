@@ -71,5 +71,9 @@
     - Move child node to the the position of the deleted node
 - Case #3: Deleting a Node with **2 Children**
     - Need to re-balance a tree after a node with 2 children is deleted
-    - Approach
-        - Find minimum of the subtree and copy it: <p align="center"><img src="Images/copy.png" width="500"></p>
+    - Approach: Min of Right Subtree
+        - 1) Find **minimum of the right subtree** and copy it: <p align="center"><img src="Images/copy.png" width="500"></p>
+        - 2) And then remove the duplicate
+    - Alternate Approach: Max of Left Subtree
+        - 1) Find **maximum of the left subtree and copy it
+        - 2) And then remove the duplicate
