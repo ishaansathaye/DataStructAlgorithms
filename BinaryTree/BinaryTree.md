@@ -63,3 +63,13 @@
         - **Order of traversal: Left subtree, right subtree, root node**
         - Apply recursive technique at each node
             - Go to left subtree -> Make current node the root node -> Go to left subtree
+
+### Node Deletion Theory
+- Case #1: Deleting a Node with **No Child**
+    - Straightforward
+- Case #2: Deleting a Node with **1 Child**
+    - Move child node to the the position of the deleted node
+- Case #3: Deleting a Node with **2 Children**
+    - Need to re-balance a tree after a node with 2 children is deleted
+    - Approach
+        - Find minimum of the subtree and copy it: <p align="center"><img src="Images/copy.png" width="500"></p>
