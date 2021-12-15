@@ -32,6 +32,50 @@ class BinarySearchTreeNode:
             elements += self.right.in_order_traversal()
 
         return elements
+    
+    def pre_order_traversal(self):
+        elements = []
+
+        elements.append(self.data)
+
+        if self.left:
+            elements += self.left.pre_order_traversal()
+        
+        if self.right:
+            elements += self.right.pre_order_traversal()
+        
+        return elements
+    
+    def post_order_traversal(self):
+        elements = []
+
+        if self.left:
+            elements += self.left.post_order_traversal()
+        
+        if self.right:
+            elements += self.right.post_order_traversal()
+        
+        elements.append(self.data)
+
+        return elements
+    
+    def breadth_first_traversal(self):
+        elements = []
+        traversed = []
+        
+        if self.data:
+            elements.append(self.data)
+            traversed.append(self)
+        while traversed:
+            base = traversed.pop(0)
+            if base.left:
+                elements.append(base.left.data)
+                traversed.append(base.left)
+            if base.right:
+                elements.append(base.right.data)
+                traversed.append(base.right)
+        
+        return elements
 
     def search(self, value):
         if self.data == value:
@@ -48,6 +92,9 @@ class BinarySearchTreeNode:
                 return self.right.search(value)
             else:
                 return False
+    
+    def delete(self, value):
+        
 
     def find_min(self):
         if self.left:
@@ -73,51 +120,6 @@ class BinarySearchTreeNode:
 
         return sum
 
-    def post_order_traversal(self):
-        elements = []
-
-        if self.left:
-            elements += self.left.post_order_traversal()
-        
-        if self.right:
-            elements += self.right.post_order_traversal()
-        
-        elements.append(self.data)
-
-        return elements
-
-    def pre_order_traversal(self):
-        elements = []
-
-        elements.append(self.data)
-
-        if self.left:
-            elements += self.left.pre_order_traversal()
-        
-        if self.right:
-            elements += self.right.pre_order_traversal()
-        
-        return elements
-    
-    '''TODO: Breadth First Traversal Technique Implementation'''
-    def breadth_first_traversal(self):
-        elements = []
-        traversed = []
-        
-        if self.data:
-            elements.append(self.data)
-            traversed.append(self)
-        while traversed:
-            base = traversed.pop(0)
-            if base.left:
-                elements.append(base.left.data)
-                traversed.append(base.left)
-            if base.right:
-                elements.append(base.right.data)
-                traversed.append(base.right)
-        
-        return elements
-
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
 
@@ -136,26 +138,3 @@ if __name__ == '__main__':
     print(numbers_tree.calculate_sum())
     print(numbers_tree.post_order_traversal())
     print(numbers_tree.pre_order_traversal())
-
-    print()
-
-    numbers = [15,12,7,14,27,20,23,88]
-    numbers_tree = build_tree(numbers)
-    print(numbers_tree.in_order_traversal())
-    print(numbers_tree.find_min())
-    print(numbers_tree.find_max())
-    print(numbers_tree.calculate_sum())
-    print(numbers_tree.post_order_traversal())
-    print(numbers_tree.pre_order_traversal())
-    print(numbers_tree.breadth_first_traversal())
-
-    print()
-
-    countries = ["India","Pakistan","Germany", "USA","China","India","UK","USA"]
-    country_tree = build_tree(countries)
-    print(country_tree.in_order_traversal())
-    print(country_tree.search("China"))
-    print(country_tree.find_min())
-    print(country_tree.find_max())
-    print(country_tree.post_order_traversal())
-    print(country_tree.pre_order_traversal())
