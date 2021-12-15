@@ -1,4 +1,5 @@
-#Binary Search Tree with Node Deletion
+# 1. Modify delete method in class BinarySearchTreeNode class to use max element from left subtree. 
+# You will remove lines marked with ---> and use max value from left subtree
 class BinarySearchTreeNode:
     def __init__(self, data):
         self.data = data
@@ -94,30 +95,27 @@ class BinarySearchTreeNode:
                 return False
     
     def delete(self, value):
-        #TODO: Use README.md image at end to go through each case
         if value < self.data:
             if self.left:
-                #assign a new subtree
-                self.left = self.left.delete(value) #use recursion to find the node in the left subtree
+                self.left = self.left.delete(value)
             else:
-                return None #python already does this by default for functions 
+                return None
         elif value > self.data:
             if self.right:
-                #assign a new subtree
-                self.right = self.right.delete(value) #use recursion to find the node in the right subtree
+                self.right = self.right.delete(value)
         else:
-            if self.left is None and self.right is None: #NOTE: case 1: node with no child
-                return None #returns back to the above if-statements to the parent node that its left or right is None (empty or deleted)
-            if self.left is None: #NOTE: case 2: node with 1 child
-                return self.right #returns back to the parent node that its left or right is self.right
-            if self.right is None: #NOTE: case 2: node with 1 child
-                return self.left #returns back to the parent node that its left or right is self.left
+            if self.left is None and self.right is None:
+                return None
+            if self.left is None:
+                return self.right
+            if self.right is None:
+                return self.left
             
             #NOTE: case 3: node with 2 children
-            #Approach 1: Finding Min of Right Subtree (could also implement alternate approach of max of left subtree)
-            minValue = self.right.find_min() #find minimum from right subtree
-            self.data = minValue #copy minimum 
-            self.right = self.right.delete(minValue) #returns a new subtree by deleting duplicate
+            #Alternate Approach (2): Finding Max of Left Subtree
+            maxValue = self.left.find_max() #find maximum from left subtree
+            self.data = maxValue #copy maximum 
+            self.left = self.left.delete(maxValue) #returns a new subtree by deleting duplicate
         
         return self
 
