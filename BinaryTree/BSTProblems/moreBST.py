@@ -116,6 +116,25 @@ class BinarySearchTreeNode:
             elements += self.right.pre_order_traversal() #use recursion to get to rightmost of right subtree
         
         return elements
+    
+    '''Breadth-First Traversal'''
+    def breadth_first_traversal(self):
+        elements = []
+        traversed = []
+        
+        if self.data:
+            elements.append(self.data)
+            traversed.append(self)
+        while traversed:
+            base = traversed.pop(0)
+            if base.left:
+                elements.append(base.left.data)
+                traversed.append(base.left)
+            if base.right:
+                elements.append(base.right.data)
+                traversed.append(base.right)
+        
+        return elements
 
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
@@ -146,6 +165,7 @@ if __name__ == '__main__':
     print(numbers_tree.calculate_sum())
     print(numbers_tree.post_order_traversal())
     print(numbers_tree.pre_order_traversal())
+    print(numbers_tree.breadth_first_traversal())
 
     print()
 
