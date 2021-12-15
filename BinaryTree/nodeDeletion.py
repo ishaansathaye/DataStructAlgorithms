@@ -94,26 +94,30 @@ class BinarySearchTreeNode:
                 return False
     
     def delete(self, value):
+        #Use README.md image 
         if value < self.data:
             if self.left:
-                self.left.delete(value) #use recursion to find the node in the left subtree
+                #assign a new subtree
+                self.left = self.left.delete(value) #use recursion to find the node in the left subtree
             else:
                 return None #python already does this by default for functions 
         elif value > self.data:
             if self.right:
-                self.right.delete(value) ##use recursion to find the node in the right subtree
+                #assign a new subtree
+                self.right = self.right.delete(value) #use recursion to find the node in the right subtree
         else:
-            if self.left is None and self.right is None: #case 1: node with no child
-                return None
-            if self.left is None: #case 2: node with 1 child
-                return self.right
-            if self.right is None: #case 2: node with 1 child
-                return self.left
+            if self.left is None and self.right is None: #NOTE: case 1: node with no child
+                return None #returns back to the above if-statements to the parent node that its left or right is None (empty or deleted)
+            if self.left is None: #NOTE: case 2: node with 1 child
+                return self.right #returns back to the parent node that its left or right is self.right
+            if self.right is None: #NOTE: case 2: node with 1 child
+                return self.left #returns back to the parent node that its left or right is self.left
             
+            #NOTE: case 3: node with 2 children
             #Approach 1: Finding Min of Right Subtree (could also implement alternate approach of max of left subtree)
             minValue = self.right.find_min() #find minimum from right subtree
             self.data = minValue #copy minimum 
-            self.right = self.right.delete(minValue) #returns a new subtree 
+            self.right = self.right.delete(minValue) #returns a new subtree by deleting duplicate
         
         return self
 
@@ -152,5 +156,24 @@ def build_tree(elements):
 if __name__ == '__main__':
     numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
     numbers_tree = build_tree(numbers)
-    numbers_tree.delete(20)
-    print(numbers_tree.in_order_traversal())
+    print("Original Elements:", numbers_tree.in_order_traversal())
+    numbers_tree.delete(20) #can also verify using debugger
+    print("Case#3-Deleted 20:", numbers_tree.in_order_traversal())
+
+    print()
+
+    numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
+    numbers_tree = build_tree(numbers)
+    print("Original Elements:", numbers_tree.in_order_traversal())
+    numbers_tree.delete(23)
+    print("Case#2-Deleted 23:", numbers_tree.in_order_traversal())
+
+    print()
+
+    numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
+    numbers_tree = build_tree(numbers)
+    print("Original Elements:", numbers_tree.in_order_traversal())
+    numbers_tree.delete(9)
+    print("Case #1-Deleted 9:", numbers_tree.in_order_traversal())
+
+    print()

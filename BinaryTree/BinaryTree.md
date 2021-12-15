@@ -77,3 +77,5 @@
     - Alternate Approach: Max of Left Subtree
         - 1) Find **maximum of the left subtree and copy it
         - 2) And then remove the duplicate
+---
+<p align="center"><img src="Images/exampleBSTDeletion.png" width="1000"></p>
