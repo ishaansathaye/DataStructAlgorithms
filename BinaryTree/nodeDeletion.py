@@ -94,7 +94,28 @@ class BinarySearchTreeNode:
                 return False
     
     def delete(self, value):
+        if value < self.data:
+            if self.left:
+                self.left.delete(value) #use recursion to find the node in the left subtree
+            else:
+                return None #python already does this by default for functions 
+        elif value > self.data:
+            if self.right:
+                self.right.delete(value) ##use recursion to find the node in the right subtree
+        else:
+            if self.left is None and self.right is None: #case 1: node with no child
+                return None
+            if self.left is None: #case 2: node with 1 child
+                return self.right
+            if self.right is None: #case 2: node with 1 child
+                return self.left
+            
+            #Approach 1: Finding Min of Right Subtree (could also implement alternate approach of max of left subtree)
+            minValue = self.right.find_min() #find minimum from right subtree
+            self.data = minValue #copy minimum 
+            self.right = self.right.delete(minValue) #returns a new subtree 
         
+        return self
 
     def find_min(self):
         if self.left:
@@ -131,10 +152,5 @@ def build_tree(elements):
 if __name__ == '__main__':
     numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
     numbers_tree = build_tree(numbers)
+    numbers_tree.delete(20)
     print(numbers_tree.in_order_traversal())
-    print(numbers_tree.search(20))
-    print(numbers_tree.find_min())
-    print(numbers_tree.find_max())
-    print(numbers_tree.calculate_sum())
-    print(numbers_tree.post_order_traversal())
-    print(numbers_tree.pre_order_traversal())
