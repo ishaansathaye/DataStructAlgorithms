@@ -58,5 +58,3 @@ if __name__ == '__main__':
     start = "Mumbai"
     end = "New York"
     print(f"Paths between {start} and {end}:", route_graph.get_paths(start, end))
-
-   
