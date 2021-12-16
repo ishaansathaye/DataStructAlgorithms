@@ -7,7 +7,9 @@ class Graph:
                 self.graph_dict[start].append(end)
             else:
                 self.graph_dict[start] = [end]
-        print("graph dict:", self.graph_dict)
+        print()
+        print("Graph Dict:", self.graph_dict)
+        print("-----------")
 
     def get_paths(self, start, end, path=[]): #finds all paths from start destination to end destination, default value of paths is empty
         path = path + [start]
@@ -22,10 +24,20 @@ class Graph:
         for node in self.graph_dict[start]: #iterates through the values of the dictionary
             if node not in path: #check if the destination has been visited or not
                 new_paths = self.get_paths(node, end, path) #NOTE: use recursion to get the end destination by going through all the possible values of start key
+                #NOTE: use debugging to follow recursion
                 for p in new_paths: #iterates through different paths
                     paths.append(p) #adds different paths to a list
         
         return paths #returns a list with all possible paths
+
+    def get_shortest_path(self, start, end, path=[]): #finds shortest paths based on number of stops or edges
+        path = path + [start]
+
+        if start == end:
+            return path
+
+        if start not in self.graph_dict:
+            return []
 
 if __name__ == '__main__':
     routes = [ #use tuples to simulate routes between cities
@@ -58,3 +70,22 @@ if __name__ == '__main__':
     start = "Mumbai"
     end = "New York"
     print(f"Paths between {start} and {end}:", route_graph.get_paths(start, end))
+
+    print()
+
+    #testing shortest path
+    start = "Toronto"
+    end = "New York"
+    print(f"Shortest Path between {start} and {end}:", route_graph.get_shortest_path(start, end))
+
+    print()
+
+    start = "New York"
+    end = "New York"
+    print(f"Shortest Path between {start} and {end}:", route_graph.get_shortest_path(start, end))
+
+    print()
+
+    
+
+    print()
