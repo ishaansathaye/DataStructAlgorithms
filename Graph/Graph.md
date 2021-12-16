@@ -6,7 +6,7 @@
     - Individual entities are called nodes
     - Edges connect nodes
 - Directed Graph -> Direction between two nodes
-    - Example: Flight Routes
+    - Example: Flight Routes -> <p align="center"><img src="Images/directed.png" width="400"></p>
 ### Difference between Tree and Graph Data Structures
 - Tree - should be only one path between two nodes
     - **Thought of as a special type of Graph**
