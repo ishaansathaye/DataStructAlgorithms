@@ -1,6 +1,6 @@
 ## General Tree
 ---
-### Tree Structure Usecase
+### Tree Structure Use-case
 - Use whenever need to represent hierarchical information 
 ### Tree Terms
 - Has branches and leaves
