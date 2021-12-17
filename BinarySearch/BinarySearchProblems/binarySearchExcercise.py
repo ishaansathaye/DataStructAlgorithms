@@ -32,16 +32,19 @@ def find_occurrences(numbers_list, number_to_find):
     indices = [index]
 
     i = index - 1 #check left side of the list for more occurrences
-    while number_to_find in numbers_list:
-        index = binary_search_recursive(numbers_list, number_to_find, 0, len(numbers_list))
-        if index == -1:
-            return indices
-        else:
-            indices.append(index)
-            del numbers_list[index]
+    while i >= 0:
+        if numbers_list[i] == number_to_find:
+            indices.append(i)
+        i = i - 1
     
     i = index + 1 #check right side of the list for more occurrences
-    return indices.sort()
-
-
+    while i < len(numbers_list):
+        if numbers_list[i] == number_to_find:
+            indices.append(i)
+        i = i + 1
+    
+    indices.sort()
+        
+    return indices
+    
 print(find_occurrences(numbers, number_to_find))
