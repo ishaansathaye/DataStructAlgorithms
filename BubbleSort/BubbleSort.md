@@ -11,11 +11,7 @@
     - Comparing side by side elements
 - *Why it is called bubble sort:*
     - Like bubbles rise to the top, highest number goes to the correct position
-### Tree Terms
-- Has branches and leaves
-- Top entity is called **Root Node**
-- Intermediate elements are called **Nodes**
-- Entities that do not have subcategories or children are called **Leaf Nodes**
-- Categories can have Parent/Children, Ancestors/Descendants, and Level: 0,1,2
-### General Tree Example: 
-<p align="center"><img src="Images/GenTree.png" width="500"></p>
+### Space-Time
+- Time Complexity: **O(n^2)**
+- Space Complexity: **O(1)**
+    - Not using any additional space -> just using the same list
