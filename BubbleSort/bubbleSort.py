@@ -21,3 +21,5 @@ if __name__ == '__main__':
 
     elements = [1, 2, 4] #need to check if list is already sorted
     print(bubble_sort(elements))
+
+    #bubble sort also works on strings -> for python
