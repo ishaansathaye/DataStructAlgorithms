@@ -25,4 +25,12 @@
         4) Start another counter ```i```
             - initially it is same p index
             - keeps moving until element found that is less than pivot: <p align="left"><img src="Images/counter.png" width="240"></p>
-        5) *Swap the ```i ```counter element and the ```p index``` element*
+        5) *Swap the ```i ```counter element and the ```p index``` element*: <p align="left"><img src="Images/swap2.png" width="240"></p>
+        6) **Repeat the process of moving first the ```p index``` greater than pivot, then moving ```i``` counter for less than pivot, and swapping the two values:** <p align="left"><img src="Images/end.png" width="240"></p>
+    - All the elements left of p index less than and all on right side are greater than
+### Time Complexity
+- Average Time Complexity: **O(n log n)**
+- Worst case time complexity: **O(n^2)**
+    - wherever list is already sorted
+    - creating an imbalanced partition
+    - have n elements and are doing n iterations 
