@@ -8,7 +8,7 @@ def partition(elements, start_pointer, end_pointer): #creates a partition by put
     pivot = elements[pivot_index]
 
     while start_pointer < end_pointer: #keeps process going until the pointers cross
-        while elements[start_pointer] <= pivot: #do until found element greater than pivot
+        while start_pointer < len(elements) and elements[start_pointer] <= pivot: #do until found element greater than pivot
             start_pointer += 1 #keep moving start pointer
 
         while elements[end_pointer] > pivot: #do until found element less than pivot
@@ -30,4 +30,18 @@ def quick_sort(elements, start_pointer, end_pointer): #Hoare Partitioning Method
 
 if __name__ == '__main__':
     elements = [11, 9, 29, 7, 3, 15, 28]
-    print(quick_sort(elements, 0, len(elements)-1))
+    quick_sort(elements, 0, len(elements)-1)
+    print(elements)
+
+    tests = [
+        [11,9,29,7,2,15,28],
+        [3, 7, 9, 11],
+        [25, 22, 21, 10],
+        [29, 15, 28],
+        [],
+        [6]
+    ]
+
+    for elements in tests:
+        quick_sort(elements, 0, len(elements)-1)
+        print(f'Sorted array: {elements}')
