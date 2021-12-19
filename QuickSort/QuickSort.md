@@ -6,7 +6,7 @@
 3) Find the pivot of the final side and repeat first step: <p align="center"><img src="Images/pivot3.png" width="240"></p>
 - *Partitioning* - process of putting a pivot in its right position
 ### **Two Types of Partition Schemes: Hoare Partition and Lomuto Partition**
-- <mark>Hoare Partition:</mark>
+- **<mark>Hoare Partition:</mark>**
     - **Partitioning process**:
         1) Pivot is the leftmost element
         2) Have a Start and End Pointer: <p align="left"><img src="Images/hoare.png" width="240"></p>
@@ -17,7 +17,7 @@
         7) *Stop the process whenever end pointer crosses start pointer*: <p align="left"><img src="Images/cross.png" width="240"></p>
             - If pointers cross -> *swap end and pivot*
     - Repeat above process for left and right side
-- <mark>Lomuto Partition:</mark>
+- **<mark>Lomuto Partition:</mark>**
     - **Partitioning process**:
         1) Pivot is the end element
         2) The starting element is called the ```p index``` or ```Partition Index```: <p align="left"><img src="Images/lomuto.png" width="240"></p>
