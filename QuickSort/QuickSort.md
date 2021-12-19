@@ -7,7 +7,7 @@
 - *Partitioning* - process of putting a pivot in its right position
 ### **Two Types of Partition Schemes: Hoare Partition and Lomuto Partition**
 - <mark>Hoare Partition:</mark>
-    - Partitioning:
+    - **Partitioning process**:
         1) Pivot is the leftmost element
         2) Have a Start and End Pointer: <p align="left"><img src="Images/hoare.png" width="240"></p>
         3) Focus on start pointer -> *move start pointer until found element greater than pivot*
@@ -17,10 +17,12 @@
         7) *Stop the process whenever end pointer crosses start pointer*: <p align="left"><img src="Images/cross.png" width="240"></p>
             - If pointers cross -> *swap end and pivot*
     - Repeat above process for left and right side
-- **Lomuto Partition**
-    - Partitioning:
-### Searching a BST
-- Searching complexity in a list would be order of O(n)
-- Searching with through a BST needs to be efficient
-    - Searching for element 14: <p align="center"><img src="Images/search14.png" width="500"></p>
-    - Do not need to search the right hand side of tree since 14 < 15
+- <mark>Lomuto Partition:</mark>
+    - **Partitioning process**:
+        1) Pivot is the end element
+        2) The starting element is called the ```p index``` or ```Partition Index```: <p align="left"><img src="Images/lomuto.png" width="240"></p>
+        3) Keep moving p index -> *until element found that is greater than pivot*
+        4) Start another counter ```i```
+            - initially it is same p index
+            - keeps moving until element found that is less than pivot: <p align="left"><img src="Images/counter.png" width="240"></p>
+        5) *Swap the ```i ```counter element and the ```p index``` element*
