@@ -18,32 +18,7 @@ def lomuto_partition(elements, start, end):
     
     swap(partition_index, end, elements) #swaps the p index element with the end element
 
-    # while partition_index < len(elements) and elements[partition_index] < pivot:
-    #     partition_index += 1
-    
-    # i_counter = partition_index
-
-    # while i_counter < len(elements) and elements[i_counter] > pivot:
-    #     i_counter += 1
-
-    # swap(i_counter, partition_index, elements)
-
     return partition_index
-
-    # while start_pointer < end_pointer: 
-    #     while start_pointer < len(elements) and elements[start_pointer] <= pivot: 
-    #         start_pointer += 1 
-
-    #     while elements[end_pointer] > pivot:
-    #         end_pointer -= 1
-        
-    #     if start_pointer < end_pointer: 
-    #         swap(start_pointer, end_pointer, elements)
-    
-    # swap(pivot_index, end_pointer, elements)
-
-    # return end_pointer
-
 
 def quick_sort(elements, start, end): 
     if len(elements) == 1:
@@ -58,15 +33,15 @@ if __name__ == '__main__':
     quick_sort(elements, 0, len(elements)-1)
     print(elements)
 
-    # tests = [
-    #     [11,9,29,7,2,15,28],
-    #     [3, 7, 9, 11],
-    #     [25, 22, 21, 10],
-    #     [29, 15, 28],
-    #     [],
-    #     [6]
-    # ]
+    tests = [
+        [11,9,29,7,2,15,28],
+        [3, 7, 9, 11],
+        [25, 22, 21, 10],
+        [29, 15, 28],
+        [],
+        [6]
+    ]
 
-    # for elements in tests:
-    #     quick_sort(elements, 0, len(elements)-1)
-    #     print(f'Sorted array: {elements}')
+    for elements in tests:
+        quick_sort(elements, 0, len(elements)-1)
+        print("Sorted array:", elements)
