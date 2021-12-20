@@ -30,7 +30,7 @@ def quick_sort(elements, start, end):
 
 if __name__ == '__main__':
     elements = [11, 9, 29, 7, 3, 15, 28]
-    quick_sort(elements, 0, len(elements)-1)
+    quick_sort(elements, 0, len(elements)-1) #NOTE: use debugger to see quicksort recursion
     print(elements)
 
     tests = [
