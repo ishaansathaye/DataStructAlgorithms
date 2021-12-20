@@ -8,22 +8,27 @@ def swap(a, b, arr):
         arr[a], arr[b] = arr[b], arr[a]
 
 def lomuto_partition(elements, start, end):
-    pivot_index = end
-    pivot = elements[pivot_index]
+    pivot = elements[end] #pivot is the end element
+    partition_index = start #p index or partition index is the starting element index
 
-    partition_index = elements[start]
-
-    while partition_index < len(elements) and elements[partition_index] < pivot:
-        partition_index += 1
+    for i_counter in range(start, end): #keeps moving i counter
+        if elements[i_counter] <= pivot: #i counter moves until element found that is less than pivot
+            swap(i_counter, partition_index, elements) #if above statement found then swaps i counter element and p index element
+            partition_index += 1 #keeps moving p index until element found that is greater than pivot
     
-    i_counter = partition_index
+    swap(partition_index, end, elements) #swaps the p index element with the end element
 
-    while i_counter < len(elements) and elements[i_counter] > pivot:
-        i_counter += 1
+    # while partition_index < len(elements) and elements[partition_index] < pivot:
+    #     partition_index += 1
+    
+    # i_counter = partition_index
 
-    swap(i_counter, partition_index, elements)
+    # while i_counter < len(elements) and elements[i_counter] > pivot:
+    #     i_counter += 1
 
-    return i_counter
+    # swap(i_counter, partition_index, elements)
+
+    return partition_index
 
     # while start_pointer < end_pointer: 
     #     while start_pointer < len(elements) and elements[start_pointer] <= pivot: 
@@ -41,11 +46,12 @@ def lomuto_partition(elements, start, end):
 
 
 def quick_sort(elements, start, end): 
-    if start >= end or start < 0:
+    if len(elements) == 1:
         return
-    pi = lomuto_partition(elements, start, end)
-    quick_sort(elements, start, pi-1) 
-    quick_sort(elements, pi+1, end)
+    if start < end:
+        pi = lomuto_partition(elements, start, end)
+        quick_sort(elements, start, pi-1) 
+        quick_sort(elements, pi+1, end)
 
 if __name__ == '__main__':
     elements = [11, 9, 29, 7, 3, 15, 28]
