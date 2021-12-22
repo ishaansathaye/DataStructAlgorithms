@@ -35,16 +35,16 @@ def insertion_sort(elements):
 
 #codebasics solution
 def place_to_insert(array, key):
-    index = 0
-    for i in array:
-        if i > key:
-            break
+    index = 0 #starts algo at first element
+    for i in array: #iterates through current stream list
+        if i > key: #if the new value is less than any elements
+            break #gets out of loop to return the index it should insert at
         else:
-            index += 1
-    return index
+            index += 1 #if the new value is greater than any elements -> keep increasing index to insert at
+    return index #returns the index new value should be inserted at
 def insert_to_sorted(array, key):
-    index = place_to_insert(array, key)
-    return array[0:index]+[key]+array[index:]
+    index = place_to_insert(array, key) #gets index of where new value should be added in list
+    return array[0:index]+[key]+array[index:] #returns list with added element in right position
 
 if __name__ == '__main__':
     elements  = [2, 1, 5, 7, 2, 0, 5]
@@ -53,13 +53,15 @@ if __name__ == '__main__':
     print()
     
     #codebasics solution - uses input of elements in list
-    stream = []
-    count = 0
+    #NOTE: use debugger to see algo in progress
+    
+    stream = [] #first approach of quicksort where using a separate list
+    count = 0 #keeps track of number of elements in stream (for getting median)
     while(True):
         i = int(input())
-        count += 1
-        stream = insertion_sort(stream, i)
-        if count % 2 == 1:
+        count += 1 #incrases count for each element added to stream
+        stream = insert_to_sorted(stream, i) #calls second function on the current steam list with the new value i
+        if count % 2 == 1: #below is the algo for finding median in current stream list
             print(f"Median of {stream} : {stream[(count)//2]}")
         else:
             i1 = count//2
