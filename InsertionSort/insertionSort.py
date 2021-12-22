@@ -1,11 +1,11 @@
 def insertion_sort(elements):
-    for i in range(1, len(elements)): #consider the first element of list as sorted
-        anchor = elements[i] #current element that the algo is dealing with (saves value to later insert)
-        j = i - 1 #previous element of anchor
-        while j >= 0 and anchor < elements[j]: # compares the anchor to every element on left side (if j less than 0 sets first element to the anchor)
-            elements[j+1] = elements[j] #swapping the elements
+    for i in range(1, len(elements)): 
+        anchor = elements[i] 
+        j = i - 1 
+        while j >= 0 and anchor < elements[j]:
+            elements[j+1] = elements[j] 
             j -= 1
-        elements[j+1] = anchor #set the swapped value to the anchor
+        elements[j+1] = anchor
 
 #NOTE: use debugger to visualize how the algo works
 
