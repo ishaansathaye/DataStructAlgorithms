@@ -16,4 +16,15 @@ if __name__ == '__main__':
 
     print()
 
-    tests = 0
+    tests = [
+        [11,9,29,7,2,15,28],
+        [3, 7, 9, 11],
+        [25, 22, 21, 10],
+        [29, 15, 28],
+        [],
+        [6]
+    ]
+
+    for elements in tests:
+        insertion_sort(elements)
+        print('sorted array:', elements)
