@@ -1,3 +1,4 @@
+#NOTE: use debugger to see recursion with merge_sort and merge_two_sorted_lists2
 def merge_sort(arr): #recursive function - need to take care of exit condition first (whenever arr of size 1)
     if len(arr) <= 1: #if single element array
         return
