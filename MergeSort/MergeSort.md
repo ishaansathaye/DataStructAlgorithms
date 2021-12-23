@@ -1,6 +1,6 @@
 ## Merge Sort
 ---
-### Theory - How Insertion Sort works
+### Theory - How Merge Sort works
 - Using a separate list: <p align="center"><img src="Images/separate.png" width="500"></p>
     1) Create a new list that is empty
     2) Start putting elements from unsorted list into new list
@@ -21,12 +21,3 @@
 - Average Performance: **O(n^2) comparisons and swaps**
 - Worst-case space complexity: **O(n) total and O(1) auxiliary**
     - For space, might need to only create one variable to hold the anchor element
-### Benefits and Efficiency
-- **Less efficient on large lists** that quicksort, heapsort, or merge sort
-- Benefits
-    - efficient for small data sets
-    - more efficient than other simple algos like selection or bubble
-    - **adaptive** - efficient for datasets that are already sorted
-    - **stable** - does not change relative order of elements with equal keys
-    - **in place** - only requires a constant amount O(1) of additional memory space
-    - **online** - can sort a list as it receives it
