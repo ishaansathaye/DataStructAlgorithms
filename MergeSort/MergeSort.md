@@ -1,18 +1,15 @@
 ## Merge Sort
 ---
 ### Theory - How Merge Sort works
-- Using a separate list: <p align="center"><img src="Images/separate.png" width="500"></p>
-    1) Create a new list that is empty
-    2) Start putting elements from unsorted list into new list
-    3) Compare elements with elements in new list to **insert** at right place
-- **Without using a separate list:** <p align="center"><img src="Images/pointer.png" width="300"></p>
-    1) Set a pointer on the second element
-        - anything left of the pointer -> sorted
-        - anything right of the pointer -> unsorted
-    2) Put the element on the left side so that it is sorted
-    3) *Move the pointer to the next element*
-    4) **Compare pointer element with the elements of the left side**
-    5) Repeat above process with rest of the elements until the rest of the elements are sorted
+- Approach 1: **Using sorted arrays to merge into an empty array**
+    - Take 2 sorted arrays -> want to merge arrays into 1 sorted array: <p align="center"><img src="Images/twoArrays.png" width="300"></p>
+    1) Start with first element of each array and compare them -> create a pointer at these elements
+    2) The smaller element goes into empty list
+    3) Move the pointer of the smaller element list to the next element
+    4) Compare the pointer elements -> **add smaller one to sorted list**: <p align="center"><img src="Images/pointer.png" width="300"></p>
+    5) Repeat the above process until there is a single sorted array
+- Approach 2: **Merge Sort on 1 Unsorted Array**
+    1) 
 ### Performance: Insertion Sort
 - Worst-case Performance: **O(n^2) comparisons and swaps**
     - For unsorted, for n elements need to do n swaps -> n^2
