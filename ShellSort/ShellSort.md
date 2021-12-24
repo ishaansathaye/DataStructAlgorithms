@@ -23,10 +23,16 @@
 2) Keep reducing Gap by n/2 and keep on sorting sub-arrays
 3) Last iteration should have Gap = 1 -> Becomes Insertion Sort
 ### Performance of Shell Sort
-- Time Complexity: **O(n log n)**
-    - Original divide operation is O(1) -> constant time
-    - Combine step is O(n)
-    - Merging and sorting is **O(n log n)**
+- Worst-case performance: 
+    - **O(n^2)**
+        - Worst known worst case gap sequence
+    - **O(n log^2 n)**
+        - Best known worst case gap sequence
+- Best-case performance:
+    - **O(n log n)**
+        - Most gap sequences
+    - **O(n log^2 n)**
+        - Best known worst-case gap sequence
 - [Analysis of Merge Sort](https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/analysis-of-merge-sort)
 - **```sort()``` built-in Python function uses Timsort**
     - *Timsort* - hybrid stable sorting algorithm that uses **merge sort and insertion sort**
