@@ -13,6 +13,7 @@ def shell_sort(arr):
     size = len(arr)
     gap = size // 2
 
+    indices = []
     while gap > 0:
         for i in range(gap, size):
             anchor = arr[i]
@@ -21,10 +22,18 @@ def shell_sort(arr):
                 arr[j] = arr[j-gap]
                 j -= gap
             arr[j] = anchor
+            if arr[j-gap] == anchor and (arr[j-gap] not in indices):
+                indices.append(j-gap)
         gap = gap // 2
+    counter = 0
+    for index in indices:
+        del arr[index-counter]
+        counter += 1
             
 
 if __name__ == '__main__':
     unsorted_duplicate_arr = [2, 1, 5, 7, 2, 0, 5, 1, 2, 9, 5, 8, 3]
+    sortedList = sorted(unsorted_duplicate_arr)
+    print("Using set() and sorted():", set(sortedList))
     shell_sort(unsorted_duplicate_arr)
-    print(unsorted_duplicate_arr)
+    print("Using shell sort:        ", unsorted_duplicate_arr)
