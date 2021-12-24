@@ -1,22 +1,28 @@
 ## Shell Sort
 ---
 ### Theory - How Shell Sort works
-- Approach 1: **Using sorted arrays to merge into an empty array**
-    - Take 2 sorted arrays -> want to merge arrays into 1 sorted array: <p align="center"><img src="Images/twoArrays.png" width="300"></p>
-    1) Start with first element of each array and compare them -> create a pointer at these elements
-    2) The smaller element goes into empty list
-    3) Move the pointer of the smaller element list to the next element
-    4) Compare the pointer elements -> **add smaller one to sorted list**: <p align="center"><img src="Images/pointer.png" width="300"></p>
-    5) Repeat the above process until there is a single sorted array
-- Approach 2: **Merge Sort on 1 Unsorted Array**
-    1) Divide original array into 2 arrays: (4 and 4) or (5 and 4 if odd number of elements): <p align="center"><img src="Images/divide.png" width="300"></p>
-    2) Divide these 2 arrays one more time -> because they are still not sorted: <p align="center"><img src="Images/divide2.png" width="300"></p>
-    3) Divide arrays again: <p align="center"><img src="Images/divide3.png" width="300"></p>
-        - **Array with single element is already sorted**
-    4) Merge each of these arrays by using **Approach 1 technique**
-        - Compare the values and create an array that is sorted: <p align="center"><img src="Images/merging.png" width="500"></p>
-    5) *Keep merging until there is a single sorted array:* <p align="center"><img src="Images/finalMerge.png" width="300"></p>
-### Performance of Merge Sort
+- Shell sort - **Optimization over Insertion Sort**
+- Start with Insertion Sort process:
+    1) Start with pointer at the second element (first element is sorted, so right side of pointer is unsorted) <p align="center"><img src="Images/pointer.png" width="300"></p>
+    2) Repeat the process of moving pointer and inserting element at right position
+- **Problem with Insertion Sort**
+    - When small elements are towards the end it takes many **comparisons and swaps** 
+- **How Shell Sort Solves this Problem: Moves heavier or larger elements towards the end**
+    1) Start with a Gap and form an sub-array using the gap: <p align="center"><img src="Images/gap3.png" width="300"></p>
+    2) Sort that sub-array made due to the Gap: <p align="center"><img src="Images/sortSub.png" width="300"></p>
+    3) Create a new sub-array with the same Gap number and sort that sub-array: <p align="center"><img src="Images/secondSub.png" width="300"></p>
+    4) **Repeat step 3 again until all the heavier or larger elements are more towards the right side:** <p align="center"><img src="Images/larger.png" width="300"></p>
+    5) From a Gap of 3 -> move to Gap of 2 **(end goal is to reach a gap of 1)**
+        - Every alternate element
+    6) Sort that sub-array made from Gap of 2
+    7) Create a new sub-array from the same Gap of 2 and sort it: <p align="center"><img src="Images/gap2.png" width="300"></p>
+    8) **Last step: Reduce the Gap to 1 -> Process becomes Insertion Sort**
+    9) *Apply Insertion Sort and now swaps are reduced*
+## Summary
+1) Start with **Gap = n/2** and sort sub-arrays
+2) Keep reducing Gap by n/2 and keep on sorting sub-arrays
+3) Last iteration should have Gap = 1 -> Becomes Insertion Sort
+### Performance of Shell Sort
 - Time Complexity: **O(n log n)**
     - Original divide operation is O(1) -> constant time
     - Combine step is O(n)
