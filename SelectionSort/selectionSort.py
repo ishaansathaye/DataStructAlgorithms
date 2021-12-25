@@ -9,14 +9,14 @@
 #                 saveJ = j
 #         arr[i], arr[saveJ] = minElem, arr[i]
 
-#codebasics selection sort
-def find_min_element(arr):
-    min = 10000000
-    for i in range(arr):
-        if arr[i] < min:
-            min = arr[i]
-    return min
+# def find_min_element(arr):
+#     min = 10000000
+#     for i in range(arr):
+#         if arr[i] < min:
+#             min = arr[i]
+#     return min
 
+#codebasics selection sort
 def selection_sort(arr):
     size = len(arr)
     for i in range(size-1): #no need to go all the way to the last element
