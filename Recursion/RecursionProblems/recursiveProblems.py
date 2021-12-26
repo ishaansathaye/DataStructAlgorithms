@@ -153,8 +153,8 @@ def alt_solution11(a, b):
 	elif low == 1:
 		return 1
 	else:
-		return alt_solution11(low, high%low)
-
-print(Recurgcd(12,14))
+		return alt_solution11(low, high%low) #NOTE: use debugger to see how algo takes the remainder of high and low and passes as parameter to get gcd
+print("-")
+print(alt_solution11(8,12))
 
 print()
